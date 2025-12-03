@@ -1,5 +1,18 @@
 export type sum = (a: number, b: number) => number
 
+export interface ValidationMessages {
+  valueMissing?: string;      // для required
+  typeMismatch?: string;      // для type="email", type="url"
+  patternMismatch?: string;   // для pattern
+  tooLong?: string;           // для maxlength
+  tooShort?: string;          // для minlength
+  rangeUnderflow?: string;    // для min (числа)
+  rangeOverflow?: string;     // для max (числа)
+  stepMismatch?: string;      // для step
+  badInput?: string;          // для невалидного ввода
+  customError?: string;       // для setCustomValidity()
+}
+
 export interface StringValidator {
   min(minLength: number, message?: string): StringValidator;
   max(maxLength: number, message?: string): StringValidator;
