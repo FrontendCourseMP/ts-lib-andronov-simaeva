@@ -14,12 +14,12 @@ class FormValidator {
   }
 
   private collectFields(): void {
-    const inputs = this.form.querySelectorAll('input, textarea, select');
+    const inputs = this.form.querySelectorAll<HTMLInputElement | HTMLTextAreaElement>('input, textarea, select');
 
     inputs.forEach(input => {
       const name = input.getAttribute('name');
       if (name) {
-        this.fields.set(name, input);
+        this.fields.set(name, input as HTMLInputElement | HTMLTextAreaElement);
       }
     });
   }
