@@ -19,18 +19,24 @@ export interface StringValidator {
   required(message?: string): StringValidator;
   email(message?: string): StringValidator;
   pattern(regex: RegExp, message?: string): StringValidator;
+  validate(): boolean;
+  getErrors(): string[];
 }
 
 export interface NumberValidator {
   min(minValue: number, message?: string): NumberValidator;
   max(maxValue: number, message?: string): NumberValidator;
   required(message?: string): NumberValidator;
+  validate(): boolean;
+  getErrors(): string[];
 }
 
 export interface ArrayValidator {
   min(minItems: number, message?: string): ArrayValidator;
   max(maxItems: number, message?: string): ArrayValidator;
   required(message?: string): ArrayValidator;
+  validate(): boolean;
+  getErrors(): string[];
 }
 
 export interface FieldValidator {
