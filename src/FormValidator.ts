@@ -1,4 +1,4 @@
-class FormValidator {
+export class FormValidator {
   private form: HTMLFormElement;
   private fields: Map<string, HTMLInputElement | HTMLTextAreaElement>;
   private validators: Map<string, FieldValidator>;
