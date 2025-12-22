@@ -1,3 +1,5 @@
+import { FieldValidator } from './validators/FieldValidator';
+
 export class FormValidator {
   private form: HTMLFormElement;
   private fields: Map<string, HTMLInputElement | HTMLTextAreaElement>;
